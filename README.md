@@ -1,6 +1,8 @@
-# Newton-Raphson Power Flow
+# Vectorized Newton-Raphson Power Flow
 
 This script solves the power flow of a 3-bus system with the Newton-Raphson method. It calculates the voltage magnitude and angle at each bus, and then the power at the slack bus and the generation at every bus.
+
+The implementation is **vectorized and loopless**. Usual power flow codes use nested `for` loops over the buses to build the power injections and the Jacobian, element by element. This code has no loops over buses or matrix elements. It builds all terms at once with element-wise matrix operations and broadcasting (for example `V.*V'` and `theta - theta'`), and selects the diagonal and off-diagonal terms with mask matrices. The only loop is the Newton-Raphson iteration loop itself. The bus-level part of the code is therefore short, close to the written equations, and the same for any number of buses.
 
 Developed for undergraduate coursework in dec/2020, later translated to numpy.
 
