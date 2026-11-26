@@ -111,8 +111,6 @@ H =
 \begin{bmatrix} H_{11} & H_{12} & H_{13} \\ H_{21} & H_{22} & H_{23} \\ H_{31} & H_{32} & H_{33} \end{bmatrix}
 $$
 
-This part of the code (between the comments `A partir daqui eh generico` and `A partir daqui nao eh mais generico`) works for any number of buses. The reduction of the Jacobian and the update of the unknowns are specific to this system.
-
 ## Results
 
 | Bus | $V$ (pu) | $V$ (kV) | $\theta$ (deg) | $P_g$ (MW) | $Q_g$ (Mvar) |
@@ -120,10 +118,6 @@ This part of the code (between the comments `A partir daqui eh generico` and `A 
 | 1 | 1.0000 | 120.00 | 0 | 25.00 | 84.06 |
 | 2 | 0.9189 | 110.27 | 5.1777 | 75.00 | 2.85 |
 | 3 | 0.9020 | 108.24 | 1.1823 | 0 | 0 |
-
-The largest mismatch goes from 1.5 to 0.19, 6.9e-3, 9.2e-6 and 1.6e-11 pu in the first 5 iterations. This is the quadratic convergence of Newton-Raphson.
-
-Power balance: active generation (100 MW) is equal to the load (100 MW), because the lines have no losses. Reactive generation (86.91 Mvar) is 11.91 Mvar larger than the load (75 Mvar). This difference is the reactive power absorbed by the network, mainly by the line reactances.
 
 ## Limitations
 
