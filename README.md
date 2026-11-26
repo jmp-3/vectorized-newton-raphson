@@ -8,7 +8,7 @@ Developed for undergraduate coursework in dec/2020, later translated to numpy.
 
 | File | Language |
 |---|---|
-| `fluxo.m` | GNU Octave, or MATLAB R2017a or newer |
+| `fluxo.m` | GNU Octave, or MATLAB |
 | `fluxo.py` | Python 3 with NumPy and Matplotlib |
 
 ## How to run
